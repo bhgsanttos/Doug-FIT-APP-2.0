@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Doug Fit — Protótipo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">Doug Fit</div>
+      <div class="actions">
+        <button id="btnPay" class="btn">Assinar R$ 29,90/mês (PayPal)</button>
+        <button id="btnLogin" class="btn ghost">Login</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="auth" id="authSection">
+        <h2>Entrar / Criar conta (simulado)</h2>
+        <input id="inpName" placeholder="Nome" />
+        <input id="inpEmail" placeholder="Email" />
+        <button id="btnCreate" class="btn">Criar / Entrar</button>
+        <p class="muted">Conta simulada — depois de criar você será levado ao painel.</p>
+      </section>
+
+      <section id="dashboard" class="hidden">
+        <div class="left">
+          <nav class="menu">
+            <button class="menu-btn active" data-tab="treino">Treino</button>
+            <button class="menu-btn" data-tab="dieta">Dieta</button>
+            <button class="menu-btn" data-tab="historico">Histórico</button>
+            <button class="menu-btn" data-tab="receitas">Receitas com IA</button>
+            <button class="menu-btn" data-tab="exame">Exame / Atualização</button>
+          </nav>
+          <div class="card info-card">
+            <h3 id="uName">Usuário</h3>
+            <p id="uStatus">Assinatura: <strong id="subStatus">Não assinado</strong></p>
+            <p class="muted">Meta: ganhar massa magra · Target: 75 kg</p>
+          </div>
+        </div>
+
+        <div class="content">
+          <section id="treino" class="tab active">
+            <h2>Ficha de Treino</h2>
+            <p class="muted">Modelo de treino: 4x semana — foco em hipertrofia.</p>
+            <ul id="trainList">
+              <li>Segunda: Peito + Tríceps</li>
+              <li>Terça: Costas + Bíceps (atenção: pausar excesso de bíceps por overtraining)</li>
+              <li>Quarta: Pernas</li>
+              <li>Quinta: Ombro + Core</li>
+            </ul>
+          </section>
+
+          <section id="dieta" class="tab">
+            <h2>Dieta Atual</h2>
+            <div id="dietaContent">
+              <!-- Diet content injected by script.js -->
+            </div>
+            <button id="btnDownloadDiet" class="btn ghost">Baixar dieta (HTML)</button>
+          </section>
+
+          <section id="historico" class="tab">
+            <h2>Histórico</h2>
+            <div id="historyList" class="history"></div>
+          </section>
+
+          <section id="receitas" class="tab">
+            <h2>Receitas com IA</h2>
+            <p class="muted">Digite os alimentos que você tem em casa e a IA (simulada) gera receitas completas.</p>
+            <input id="ingInput" placeholder="Ex: frango, batata doce, espinafre, alho" />
+            <button id="genRecipe" class="btn">Gerar Receita</button>
+
+            <div id="recipeResult" class="card result hidden"></div>
+          </section>
+
+          <section id="exame" class="tab">
+            <h2>Exame / Bioimpedância</h2>
+            <p class="muted">Faça upload do exame (imagem ou PDF). O sistema simulará atualização da ficha com base no exame.</p>
+            <input type="file" id="fileExam" accept=".png,.jpg,.jpeg,.pdf" />
+            <button id="btnProcessExam" class="btn">Processar Exame (simulado)</button>
+            <div id="examResult" class="card result hidden"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Protótipo Doug Fit — Pagamentos por PayPal podem ser integrados depois. Versão demo.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

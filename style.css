@@ -1,0 +1,42 @@
+:root{
+  --bg:#0f172a; --panel:#0b1220; --muted:#98a6b8; --accent:#10b981; --text:#e6eef6;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#071029,#0f172a);color:var(--text);-webkit-font-smoothing:antialiased;}
+.app{max-width:1100px;margin:28px auto;padding:18px;background:var(--panel);border-radius:12px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.brand{font-weight:700;font-size:20px;color:var(--accent)}
+.actions{display:flex;gap:8px}
+.btn{background:var(--accent);border:none;color:#021124;padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+
+.main{display:flex;margin-top:18px;gap:18px}
+.auth{padding:18px;background:rgba(255,255,255,0.02);border-radius:10px;width:100%;text-align:center}
+.auth input{display:block;width:70%;margin:10px auto;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+.hidden{display:none}
+.left{width:280px}
+.menu{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.menu-btn{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:10px;border-radius:8px;color:var(--text);text-align:left;cursor:pointer}
+.menu-btn.active{background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.06)}
+
+.card{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
+.info-card h3{margin:0 0 6px 0}
+.content{flex:1;padding:6px;background:transparent;border-radius:8px;min-height:420px}
+.tab{display:none}
+.tab.active{display:block}
+.muted{color:var(--muted);font-size:13px}
+input{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+
+.history{display:flex;flex-direction:column;gap:10px}
+.history .entry{padding:10px;border-radius:8px;background:rgba(255,255,255,0.02)}
+
+.result{margin-top:12px;padding:12px}
+
+.footer{margin-top:18px;text-align:center;color:var(--muted);padding:12px;border-top:1px solid rgba(255,255,255,0.03)}
+
+/* responsive */
+@media(max-width:880px){
+  .main{flex-direction:column}
+  .left{width:100%}
+  .auth input{width:90%}
+}
